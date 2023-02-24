@@ -16,8 +16,7 @@ router.post("/",async(req,res)=>{
 });
 router.get("/",async(req,res)=>{
     try{
-       // const cat=await SCategorie.find();
-       const scat = await SCategorie.find().populate("categorieID").exec() 
+        const scat=await SCategorie.find();
         res.status(200).json(scat);
     }catch(error){
     res.status(404).json({ message: error.message });
